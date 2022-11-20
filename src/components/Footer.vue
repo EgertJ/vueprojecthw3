@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 
-footer{
+footer {
 font-family: sans-serif;
 background-color: #4267B2;
 color:rgb(255, 255, 255);
