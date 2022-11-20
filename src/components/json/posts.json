@@ -1,0 +1,102 @@
+[
+{   
+    "id" : "1",
+    "author": "Tauri",
+    "creation": "10.10.2022",
+    "picture": "camera.jpg",
+    "caption": "Camera",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "2",
+    "author": "Egert",
+    "creation": "11.10.2022",
+    "picture": "dog.jpg",
+    "caption": "Golden retriever",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "3",
+    "author": "Hugo",
+    "creation": "12.10.2022",
+    "picture": "halloween.jpg",
+    "caption": "Halloween",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "4",
+    "author": "Tauri",
+    "creation": "13.10.2022",
+    "picture": "cake.jpg",
+    "caption": "Piece of cake",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "5",
+    "author": "Tauri",
+    "creation": "13.10.2022",
+    "picture": "racecar.jpg",
+    "caption": "Racecar",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "6",
+    "author": "Tauri",
+    "creation": "13.10.2022",
+    "picture": "Deltabuilding.jpg",
+    "caption": "Delta building",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "7",
+    "author": "Tauri",
+    "create date": "13.10.2022",
+    "picture": "tartu.jpg",
+    "caption": "Tartu",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "8",
+    "author": "Tauri",
+    "creation": "13.10.2022",
+    "picture": "basketballplayer.jpg",
+    "caption": "Basketball player",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "9",
+    "author": "Tauri",
+    "creation": "13.10.2022",
+    "picture": "vargad.jpg",
+    "caption": "Thieves",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+},
+{
+    "id" : "10",
+    "author": "Tauri",
+    "creation": "13.10.2022",
+    "picture": "sunflowers.jpg",
+    "caption": "Sunflowers",
+    "profilepic": "me.png",
+    "like": "like.png",
+    "like_count": "0"
+}
+]
