@@ -4,8 +4,7 @@
     <form>
         <div style="display: flex; justify-content: center">
             <div style="display: block; text-align: left;">
-                <h3>Email</h3>
-                <h3>Password</h3>
+
             </div>
             <div class="text-fields" style="display: flex; flex-direction: column;">
                 <input required class="field" type="text" name="email" placeholder="Email" v-model="email">
@@ -13,10 +12,10 @@
             </div>
         </div>
         <div class = "buttons">
-            <button @click="LogIn" class="blue-button" id="login-button" type="button">Login</button>
+            <button @click="LogIn" class="blue-button" id="login-button" type="button">Log In</button>
             <p class = "buttonTextBetween">Or</p>
             <router-link to="/signup">
-                <button class="blue-button"  id="signup-button" type="button">Signup</button>
+                <button class="blue-button"  id="signup-button" type="button">Sign Up</button>
             </router-link>
         </div>
     </form>
@@ -93,11 +92,11 @@ margin-bottom: 5px;
 }
 
 h3 {
-margin-right: 20px;
+margin-right: 10px;
 }
 
 .field{
-width: 20em;
+width: 25em;
 height: 2.8em;
 }
 
@@ -107,7 +106,7 @@ padding: 0.3em;
 
 #login-button{
 width:5em;
-height: 1.8em;
+height: 2em;
 padding: 0;
 margin-bottom: 1.3em;
 margin-top:0.8em;
@@ -116,22 +115,15 @@ cursor:pointer;
 
 #signup-button{
 width:5em;
-height: 1.8em;
-padding: 0;
+height: 2em;
 margin-bottom: 1.3em;
 margin-top:0.8em;
 cursor:pointer;
 }
 
 .blue-button {
-margin-left:1em;
-margin-right:1em;
 background-color: #4267B2;
-border: 0;
-padding: 10px 20px;
 font-size: medium;
-margin-top: 20px;
-margin-bottom: 20px;
 color: white;
 border-radius: 20px;
 }

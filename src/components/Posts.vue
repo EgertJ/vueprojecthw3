@@ -73,10 +73,11 @@ a {
     margin-top: 2%;
     margin-bottom: 2%;
     line-height: 25px;
-    font-size: 15px;
+    font-size: 17px;
     border-radius: 10px;
     padding-left: 1.5%;
     padding-right: 1.5%;
     padding-top: 1.5%;
+  padding-bottom: 1.5%;
 }
 </style>

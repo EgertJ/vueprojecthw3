@@ -22,6 +22,8 @@ font-size: 17px;
 padding-top:5px;
 padding-bottom:5px;
 bottom:0;
-box-sizing: border-box;
+  margin-bottom: auto;
+  position: absolute;
+  width: 100%;
 }
 </style>

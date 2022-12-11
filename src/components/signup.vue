@@ -3,8 +3,6 @@
     <div class="login-flex">
         <div style="display: flex; justify-content: center">
           <div style="display: block; text-align: left;">
-            <h3>Email</h3>
-            <h3>Password</h3>
           </div>
           <div class="text-fields" style="display: flex; flex-direction: column;">
             <input required class="field" type="text" name="email" placeholder="Email" v-model="email">
@@ -108,7 +106,7 @@ h3 {
 }
 
 .field{
-  width: 20em;
+  width: 25em;
   height: 2.8em;
 }
 
@@ -118,23 +116,17 @@ h3 {
 }
 #login-button{
   width:5em;
-  height: 1.8em;
+  height: 2em;
   padding: 0;
   margin-bottom: 1.3em;
   margin-top:0.8em;
   cursor:pointer;
 }
 .blue-button {
-margin-left:1em;
-margin-right:1em;
-background-color: #4267B2;
-border: 0;
-padding: 10px 20px;
-font-size: medium;
-margin-top: 20px;
-margin-bottom: 20px;
-color: white;
-border-radius: 20px;
+  background-color: #4267B2;
+  font-size: medium;
+  color: white;
+  border-radius: 20px;
 }
 .login-text{
   margin:0;

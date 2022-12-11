@@ -73,11 +73,9 @@ width: 100%;
 box-sizing: border-box;
 border: none;
 border-bottom: 1px solid white;
-color: blue;
+color: black;
 }
 button {
-margin-left:1em;
-margin-right:1em;
 background-color: #4267B2;
 border: 0;
 padding: 10px 20px;
@@ -86,6 +84,8 @@ margin-top: 20px;
 margin-bottom: 20px;
 color: white;
 border-radius: 20px;
+  position: relative;
+  left: 38%;
 }
 
 </style>
