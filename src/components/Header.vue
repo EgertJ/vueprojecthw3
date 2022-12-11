@@ -4,8 +4,7 @@
     <header>
         <ul>
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/SignUpView">Sign Up</router-link>
-            </li>
+            <li><router-link to="/about">Contacts</router-link></li>
         </ul>
     </header>
 </template>

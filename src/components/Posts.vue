@@ -1,40 +1,43 @@
 <template>
     <div class="flex-container">
-        <div v-for="item in posts">
-            <div style ="display:flex; justify-content: space-between; align-items: center; padding-bottom:10px; width:100%">
-                <img class="profilepic" :src="item.profilepic" />
-                <h3>{{item.creation}}</h3>
-            </div>
-            <img class="jspic" :src="item.picture" />
-                <h3 style="display:flex; justify-content: left; text-align: left; width:100%">{{item.caption}}</h3>
-            <div style="display:flex; justify-content: space-between; align-items: center; width:100%">
-                <button v-on:click="IncreaseLike(item.id)" class="like">
-                    <img style="width:60%" :src="item.like" />
-                </button>
-                <h3>{{item.like_count + " likes"}}</h3>
-            </div>
+        <div v-for="post in posts" :key="post.id">
+            <router-link :to="'/apost/' + post.id">
+                <div style="display:flex; justify-content: end">
+                    <span class="date"> {{ post.date }} </span>
+                </div>
+
+                <div style="display:flex; justify-content: begin">
+                    <span class="body"> {{ post.body }} </span>
+                </div>
+            </router-link>
         </div>
+        
     </div>
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
+
 export default {
     name: 'Posts',
-    data: function() {
-        return{}
+    data() {
+    return {
+    posts: [],
+    };
+},
+methods: {
+    fetchPosts() {
+    fetch(`http://localhost:3000/api/posts/`)
+        .then((response) => response.json())
+        .then((data) => (this.posts = data))
+        .catch((err) => console.log(err.message));
     },
-    computed: {
-        posts() {
-            return this.$store.state.postsData
-        }
-    },
-    methods:{
-        IncreaseLike: function(item_id) {
-            this.$store.commit('IncreaseLike', item_id)
-        }
+},
+mounted() {
+    this.fetchPosts();
+    console.log("mounted");
+},
+        
     }
-}
 </script>
 
 <style scoped>
@@ -43,27 +46,23 @@ export default {
     font-family: sans-serif;
 }
 
-#post-body {
-    resize: none;
-    vertical-align: top;
-    margin: 0 auto;
-    width: 70%;
+a {
+    color: black;
+    text-decoration: none;
 }
 
-.profilepic{
-    width : 6%;
-    height:fit-content;
+.item {
+    text-align: right;
+    background: rgb(189, 212, 199);
+    margin-bottom: 5px;
+    padding: 3px 5px;
+    border-radius: 10px;
 }
 
-.like{
-    text-align: left;
-    border: none;
-    width : 10%;
-    height:fit-content;
-}
 .flex-container {
-    display: block;
-    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
 }
 
 
@@ -73,10 +72,6 @@ export default {
     margin:auto;
     margin-top: 2%;
     margin-bottom: 2%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     line-height: 25px;
     font-size: 15px;
     border-radius: 10px;
@@ -84,9 +79,4 @@ export default {
     padding-right: 1.5%;
     padding-top: 1.5%;
 }
-
-.jspic{
-    width : 100%;
-}
-
 </style>

@@ -1,14 +1,13 @@
 <template>
   <div class="flex-container" style="text-align: center; height: 80.8vh">
     <div class="login-flex">
-      <form>
         <div style="display: flex; justify-content: center">
           <div style="display: block; text-align: left;">
             <h3>Email</h3>
             <h3>Password</h3>
           </div>
           <div class="text-fields" style="display: flex; flex-direction: column;">
-            <input required class="field" type="text" name="email" placeholder="Email">
+            <input required class="field" type="text" name="email" placeholder="Email" v-model="email">
             <input required class="field" type="password" name="password" placeholder="Password" v-model="password">
           </div>
         </div>
@@ -22,22 +21,21 @@
             
           </small>
         <div>
-          <button class="blue-button" id="login-button" :type="has_length && has_two_lowercase && has_uppercase && has_number && has_special  && has_underscore && starts_uppercase? 'submit' : 'button'">Sign Up</button>
+          <button @click="SignUp" class="blue-button" id="login-button" :disabled = "has_length && has_two_lowercase && has_uppercase && has_number && has_special  && has_underscore && starts_uppercase ? false: true">Sign Up</button>
         </div>
-      </form>
     </div>
 
   </div>
 </template>
 
 <script>
-import router from "@/router";
 
 export default {
   name: "signup",
   
   data() {
     return {
+      email: '',
       password: null,
       password_length: 0,
       contains_right_amount_of_characters: false,
@@ -61,59 +59,32 @@ export default {
     }
   },
 
-  // methods: {
+methods: {
+  SignUp() {
+      var data = {
+        email: this.email,
+        password: this.password
+      };
+      fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+          credentials: 'include', 
+          body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+      console.log(data);
+      this.$router.push('/');
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error");
+      });
+    }
 
-  //   submit() {
-  //     //if you want to send any data into server before redirection then you can do it here
-  //     if (this.checkPassword() === true) {
-  //       router.push("/");
-  //     }
-  //   },
-
-  //   data: {
-
-  //     password: null,
-  //     password_length: 0,
-  //     contains_right_amount_of_characters: false,
-  //     contains_number: false,
-  //     contains_uppercase: false,
-  //     contains_lowercase: false,
-  //     contains_special_character: false,
-  //     valid_password: false
-  //   },
-
-  //   checkPassword() {
-  //     this.password_length = this.password.length;
-  //     const format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-
-  //     if (this.password_length >= 8 && this.password_length <= 15) {
-  //       this.contains_right_amount_of_characters = true;
-  //     } else {
-  //       this.contains_right_amount_of_characters = false;
-  //     }
-
-  //     this.contains_number = /\d/.test(this.password);
-  //     this.contains_uppercase = /[A-Z]/.test(this.password);
-  //     this.contains_lowercase = /[a-z]/.test(this.password);
-  //     this.contains_special_character = format.test(this.password);
-
-  //     if (this.contains_right_amount_of_characters === true &&
-  //         this.contains_special_character === true &&
-  //         this.contains_uppercase === true &&
-  //         this.contains_lowercase === true &&
-  //         this.contains_number === true) {
-  //           return true
-  //     } else {
-
-  //       console.log("INVALID PASSWORD! PASSWORD CONDITIONS ARE: The password should be of a specific length (at least 8 chars and less than 15 chars).\n" +
-  //           "Includes at least one uppercase alphabet character.\n" +
-  //           "Includes at least two lowercase alphabet characters.\n" +
-  //           "Includes at least one numeric value.\n" +
-  //           "It should start with an uppercase alphabet.\n" +
-  //           "It should include the character “_”");
-  //     }
-  //   }
-  // }
+}
 }
 
 </script>
@@ -154,12 +125,16 @@ h3 {
   cursor:pointer;
 }
 .blue-button {
-  padding: 10px;
-  font-size: large;
-  background-color: #4267B2;
-  color: white;
-  height: 3em;
-  cursor:pointer;
+margin-left:1em;
+margin-right:1em;
+background-color: #4267B2;
+border: 0;
+padding: 10px 20px;
+font-size: medium;
+margin-top: 20px;
+margin-bottom: 20px;
+color: white;
+border-radius: 20px;
 }
 .login-text{
   margin:0;
